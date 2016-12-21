@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>获取对象宽度</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            alert("attr(\"width\"):" + $("#testDiv").attr("width")); //undifined
+            alert("css(\"width\"):" + $("#testDiv").css("width")); //auto(ie6) 或 1264px(ff)
+            alert("width():" + $("#testDiv").width()); //正确的数值1264
+            alert("style.width:" +  $("#testDiv")[0].style.width ); //空值
+        })
+    </script>
+</head>
+<body>
+<div id="testDiv">
+    测试文本</div>
+</body>
+</html>

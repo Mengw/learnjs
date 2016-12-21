@@ -1,0 +1,39 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript实例</title>
+</head>
+<body>
+<h1 id="main">这是h1标题中的一些文本。</h1>
+<script>
+    document.getElementById('main').style.color = 'red';
+</script>
+</body>
+</html>-->
+
+
+
+<!--
+将同样的 JS 代码放在 head 部分中，就无法正常运行了，浏览器报错：
+未捕获的类型错误：不能读取一个空元素的样式属性。
+出现这样的错误就是没有分清 HTML标签和 DOM 节点之间的区别，HTML 是超文本标记语言，用于展示内容，
+而行为交互是需要通过 DOM 操作来实现的，HTML 标签要通过浏览器解析，才能变成 DOM 节点，
+当我们向地址栏输入一个 URL 时，开始加载页面，然后就能够看到内容，在这期间就有一个 DOM 节点构建的过程，节点是以树的形式组织的。
+JS 对于  DOM 的操作必须在 DOM 树构建完毕后，而上面的实例，head 部分中的 JS 会被浏览器先解析，但是这时候 body 中的元素还没有被解析，DOM树并没有构建完毕，所以就出事了。
+那如果就想把 JS 代码放在 head 部分中，还不想出错，该怎么解决呢？下文再做具体分析。
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript实例</title>
+    <script>
+        document.getElementById('main').style.color = 'red';
+    </script>
+</head>
+<body>
+<h1 id="main">这是h1标题中的一些文本。</h1>
+</body>
+</html>

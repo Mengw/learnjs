@@ -50,4 +50,14 @@ $(
 );
 
 
+function testAttr1(event) {
+    alert($("hibiscus").attr("class"));
+    $("img").attr("alt", "修改后的alt属性");
+    $("img").attr({title:"修改后的title", alt: "同时修改alt属性"});
+}
+
+
+
+
+
 

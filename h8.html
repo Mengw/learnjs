@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="testDiv5" customer="customer data 1">获取自定义数据-1</div>
+
+<script>
+    $("#testDiv5").bind("click", function(event) { alert($(event.target).attr("customer")); });
+</script>
+</body>
+</html>

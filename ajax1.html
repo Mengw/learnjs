@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            var xhr = new AjaxXmlHttpRequest();
+            $("#btnAjaxOld").click(function (event) {
+                var xhr = new AjaxXmlHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if(xhr.readyState == 4){
+                        document.getElementById("divResult").innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.open("GET","data/AjaxGetCityInfo.aspx?resultType=html", true);
+                xhr.send(null);
+                });
+        });
+
+        function AjaxXmlHttpRequest() {
+            var xmlHttp;
+            try{
+                xmlHttp = new XMLHttpRequest();
+            }catch (e){
+                try {
+                    xmlHttp = new ActiveXObject("")
+                }catch(e){
+                    alert("");
+                    return false;
+                }
+            }
+
+            return xmlHttp;
+        }
+
+
+
+
+    </script>
+
+
+    <script>
+        $(
+            function () {
+                $("#btnAjaxJquery").click(function (event) {
+                   $("#divResult").load("data/AjaxGetCityInfo.asp",{"resultType":"html"});
+                });
+            });
+    </script>
+</head>
+<body>
+button id="btnAjaxJquery">使用jQuery的load方法</button>
+<br />
+<div id="divResult"></div>
+</body>
+</html>
