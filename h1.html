@@ -13,19 +13,30 @@
             background-color: #eee;
         }
     </style>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="./demo1.js"></script>
 </head>
 <body>
 
 <div>DIV1</div>
-<div>DIV2</div>
-<span>SPAN</span>
+<div><div class="q">123</div>DIV2</div>
+<span class="q">SPAN</span>
+<div id="testDiv"></div>
 <script>
-    alert("haha");
+//    alert("haha");
 </script>
 <script>
     $( "div" ).css( "border", "9px solid red" );
     $(document).ready(function(){alert(2)});
+//    $("#testDiv").each( function () {
+//        alert(this);
+//    });
+//    $.each([1,2,3],function(){
+//        alert(this);
+//    });
+//    [1,2,3].forEach(function () {
+//        alert(this);
+//    });
 </script>
 
 </body>
