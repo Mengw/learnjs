@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<img src="images/image.1.jpg" id="hibiscus" alt="Hibiscus" class="classA" />
+
+<script type="text/javascript">
+
+    $("img").each( function (index) {
+        alert("index:" + index + ", id:" + this.id + ", alt:" + this.alt);
+        this.alt = "changed";
+        alert("index:" + index + ", id:" + this.id + ", alt:" + this.alt);
+    });
+
+</script>
+
+<script type="text/javascript">
+
+        var img1 = document.getElementById("hibiscus");
+        alert(img1.alt);
+        img1.alt = "Change the alt element attribute";
+        alert(img1.alt);
+
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        var img1 = document.getElementById("hibiscus");
+        alert(img1.alt);
+        img1.alt = "Change the alt element attribute";
+        alert(img1.alt);
+    });
+</script>
+
+
+</body>
+</html>
