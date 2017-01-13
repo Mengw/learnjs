@@ -15,7 +15,7 @@ var domToJQueryObject = $(div);
  */
 var domObject = $("#testDiv")[0];
 $("#testDiv").each( function () {
-    alert(this)
+    alert(this);
 })
 
 $("#testDiv").each(function() { $(this).html("修改内容") })
@@ -27,7 +27,7 @@ var select = document.createElement("select");
 select.options[0] = new Option("加载项1", "value1");
 select.options[1] = new Option("加载项2", "value2");
 select.size = "2";
-var object = testDiv.appendChild(select);
+var object = $("#testDiv").append(select);
 
 /*
  一定不要在页面加载时就改变页面的DOM结构
